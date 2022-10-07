@@ -12,11 +12,12 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained()->cascadeOnDelete();
+            $table->string("name");
             $table->string("phone");
             $table->date('date');
             $table->string("doctor");
             $table->string("message")->nullable();
-            $table->string("status");
+            $table->string("status")->default('awaiting');
             $table->timestamps();
         });
     }

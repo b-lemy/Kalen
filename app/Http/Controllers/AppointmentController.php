@@ -9,4 +9,8 @@ class AppointmentController extends Controller
     public function index(){
         return view('appointment');
     }
+
+    public function create(){
+
+    }
 }

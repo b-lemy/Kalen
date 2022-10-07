@@ -31,9 +31,12 @@ Route::middleware([
 
     Route::get('/user',[UserContoller::class,'index'])->name('user');
     Route::get('/appointment',[AppointmentController::class,'index'])->name('appointment');
+    Route::get('/create-appointment',[AppointmentController::class,'create'])->name('create-appointment');
     Route::get('/doctor',[DoctorContoller::class,'index'])->name('doctor');
 
 });
+
+
 
 
 
