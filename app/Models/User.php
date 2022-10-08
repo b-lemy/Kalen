@@ -43,7 +43,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function appointment()
+    public function appointments()
     {
         return $this->hasMany(Appointment::class);
     }

@@ -1,4 +1,4 @@
 
 <x-app-layout>
-    admin
+    admin dashboard under construction you can move to the patient and doctor page
 </x-app-layout>

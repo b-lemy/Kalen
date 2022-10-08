@@ -11,36 +11,45 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
-                @can('isAdmin')
+                @can('isDoctor')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
-                            {{ __('User') }}
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('appointment') }}" :active="request()->routeIs('appointment')">
-                            {{ __('appointments') }}
+                        <x-jet-nav-link href="{{ route('doctor') }}" :active="request()->routeIs('doctor')">
+                            {{ __('Dashboard') }}
                         </x-jet-nav-link>
                     </div>
                 @endcan
+
+                @can('isAdmin')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                            {{ __('Dashboard') }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
+                            {{ __('Patients') }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('doctor') }}" :active="request()->routeIs('doctor')">
+                            {{ __('doctors') }}
+                        </x-jet-nav-link>
+                    </div>
+
+                @endcan
+                @can('isUser')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
+                            {{ __('Dashboard') }}
+                        </x-jet-nav-link>
+                    </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('doctor') }}" :active="request()->routeIs('doctor')">
                         {{ __('doctors') }}
                     </x-jet-nav-link>
                 </div>
-
-                @can('isUser')
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('appointment') }}" :active="request()->routeIs('appointment')">
-                            {{ __('My appointments') }}
-                        </x-jet-nav-link>
-                    </div>
                 @endcan
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
